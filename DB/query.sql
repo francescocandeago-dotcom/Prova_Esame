@@ -56,7 +56,7 @@ CREATE TABLE RichiestePermesso (
     Stato VARCHAR(20) DEFAULT 'In attesa' CHECK (Stato IN ('In attesa', 'Approvato', 'Rifiutato')),
     UtenteID INT REFERENCES Utenti(UtenteID) ON DELETE CASCADE,
     DataValutazione TIMESTAMP NULL,
-    UtenteValutazioneID INT REFERENCES Utenti(UtenteID) NULL,
+    UtenteValutazioneID INT NULL REFERENCES Utenti(UtenteID),
     CONSTRAINT check_date CHECK (DataFine >= DataInizio)
 );
 
