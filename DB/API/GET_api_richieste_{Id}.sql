@@ -1,5 +1,6 @@
 // -------------------------------------------------------------
 // GET /api/richieste/{id}
+// visualizzazione richiesta singola
 // -------------------------------------------------------------
 
 SELECT 
@@ -12,7 +13,7 @@ FROM RichiestePermesso r
 JOIN CategoriePermesso c ON r.CategoriaID = c.CategoriaID
 JOIN Utenti u ON r.UtenteID = u.UtenteID
 LEFT JOIN Utenti v ON r.UtenteValutazioneID = v.UtenteID
-WHERE r.RichiestaID = IdRichiesta;
+WHERE r.RichiestaID = RichiestaID;
 
 -------------------------------------------------------------------------------
 
